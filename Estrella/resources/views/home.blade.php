@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    
+                    <script type="text/javascript">
+                        alert('¡Ha Ingresado correctamente!');    
+                        window.location.href = "contenido";
+                    </script>
                 </div>
             </div>
         </div>

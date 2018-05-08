@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'LogController@index');
+Route::get('/', 'HomeController@index');
 
 Route::post('login', 'LogController@index');
 

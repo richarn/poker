@@ -64,9 +64,22 @@
 
                                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                            SALIR
+                                                    </a>
+                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                                </li>
+                                            </ul>    
+
                                             <ul class="nav navbar-nav navbar-right">
                                                 <li><a href="#">INICIO</a></li>
-                                            </ul>
+                                            </ul>                                                                                    
                                             @yield('contenido')
 
                                         </div>
