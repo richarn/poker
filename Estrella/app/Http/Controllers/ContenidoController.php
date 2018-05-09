@@ -10,9 +10,10 @@ class ContenidoController extends Controller
 
    }
 
-
-
 	public function index(Request $request) {
 		return view('inicio.index');
 	}
+
+
+	
 }

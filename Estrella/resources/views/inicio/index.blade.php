@@ -54,7 +54,8 @@
                                                 <span class="icon-bar"></span>
                                             </button>
                                             <a class="navbar-brand" href="#home">
-                                                <img src="{{asset('assets/images/logo.png')}}"/>
+                                                <p>EP</p>
+                                                <!--<img src="{{asset('assets/images/logo.png')}}"/-->
                                             </a>
                                         </div>
 
@@ -134,11 +135,171 @@
                                 <div class="main_service_content">
                                     <div class="service_tabe">
                                         <!-- Nav tabs -->
-                                        <ul class="service_tabe_menu nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active"><a href="#webdesign" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Cantina</a></li>
-                                            <li role="presentation"><a href="#appdesign" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Billar</a></li>
-                                            <li role="presentation"><a href="#graphicdesign" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Pozo</a></li>
-                                            <li role="presentation"><a href="#gamedesign" aria-controls="gamedesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Compra de productos</a></li>
+                                        
+                                        <!--modalCantina-->
+                                          <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Cantina</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                                  <button type="button" class="btn btn-primary">Bebidas</button>
+                                                  <button style="margin-left: 10%" type="button" class="btn btn-primary">Comestibles</button>
+                                                
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalCantina--> 
+
+                                        <!--modalBillar-->
+                                          <div class="modal fade" id="billar" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Billar</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form class="form-inline" action="/action_page.php">
+                                                      <div class="form-group">
+                                                        
+                                                          <label>Seleccione tipo de ficha</label>
+                                                          <select class="form-control" id="sel1">
+                                                            <option>Ficha</option>
+                                                            <option>Combo</option>
+                                                          </select>
+
+                                                          <label>Precio</label>
+                                                          <select class="form-control" id="sel1">
+                                                            <option>2000</option>
+                                                            <option>5000</option>
+                                                          </select>                                                          
+                                                      </div><br/>
+                                                                  
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Actualizar</button>
+                                                    </form> 
+                                                
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalBillar--> 
+
+                                        <!--modalPozo-->
+                                          <div class="modal fade" id="pozo" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Registro del día</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form class="form-inline" action="/action_page.php">
+                                                      <div class="form-group">
+                                                        <label>Ingreso del Pozo</label>
+                                                        <input type="text" class="form-control" id="" style="margin-left: 40px">
+                                                      </div><br/>
+                                                      <div class="form-group">
+                                                        <label>Ingreso de Propina:</label>
+                                                        <input type="text" class="form-control" id="" style="margin-left: 20px">
+                                                      </div>
+                                                      
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                    </form> 
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalPozo--> 
+                                         
+                                        <!--modalCompras-->
+                                          <div class="modal fade" id="compras" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Registro de compras</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form class="form-inline" action="/action_page.php">
+                                                      <div class="form-group">
+                                                        <label>Monto de compras</label>
+                                                        <input type="text" class="form-control" id="">
+                                                      </div><br/>
+                                                                  
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                    </form> 
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalPozo--> 
+
+                                       <ul class="service_tabe_menu nav nav-tabs" role="tablist">
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" class="active" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-cutlery"></i> <br />Cantina</a>
+                                            </li>
+
+
+
+
+
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#billar"><i class="glyphicon glyphicon-record"></i> <br />Billar</a></li>
+
+
+
+
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#pozo"><i class="glyphicon glyphicon-briefcase"></i> <br />Pozo</a></li>
+
+
+
+
+
+
+
+
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#compras"><i class="glyphicon glyphicon-shopping-cart"></i> <br />Compra de productos</a><li>
                                         </ul>
                                     </div>
                                 </div>
