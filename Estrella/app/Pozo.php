@@ -8,10 +8,10 @@ class Pozo extends Model
 {
     protected $table= 'Pozo';
     protected $primaryKey='IdPozo';
+    public $timestamps = false;
     protected $fillable = [
         'monto', 'propina',
-        'fecha', 'iduser',
-        'total_pozo'
+        'fecha', 'total_pozo'
     ];
 
     /**

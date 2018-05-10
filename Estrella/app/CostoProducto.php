@@ -8,9 +8,9 @@ class CostoProducto extends Model
 {
     protected $table= 'CostoProductos';
     protected $primaryKey='IdCostoProductos';
+    public $timestamps = false;
     protected $fillable = [
-        'monto', 'iduser', 
-        'fecha' 
+        'monto', 'fecha' 
      
     ];
 

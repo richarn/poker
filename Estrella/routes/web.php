@@ -20,8 +20,11 @@ Route::post('verifyLogin', 'LogController@verifyLogin');
 
 Route::get('contenido', 'ContenidoController@index');
 
+Route::post('store/compra', 'ContenidoController@store_compra');
 
+Route::post('store/pozo', 'ContenidoController@store_pozo');
 
+Route::post('store/Ingresobillar', 'ContenidoController@store_Ingresobillar');
 
 
 Auth::routes();

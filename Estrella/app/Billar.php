@@ -8,6 +8,7 @@ class Billar extends Model
 {
     protected $table= 'Billar';
     protected $primaryKey='IdBillar';
+    public $timestamps = false;
     protected $fillable = [
         'descripcion', 'precio'
     ];

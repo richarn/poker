@@ -140,7 +140,7 @@
                                           <div class="modal fade" id="myModal" role="dialog">
                                             <div class="modal-dialog">
                                             
-                                              <!-- Modal content-->
+                                      
                                               <div class="modal-content">
                                                 <div class="modal-header">
 
@@ -177,30 +177,49 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                                    <form class="form-inline" action="/action_page.php">
-                                                      <div class="form-group">
+                                                    {{Form::open(array('url' => 'store/Ingresobillar'))}}
+                                                     
+                                                      <div class="form-group form-inline">
                                                         
-                                                          <label>Seleccione tipo de ficha</label>
-                                                          <select class="form-control" id="sel1">
-                                                            <option>Ficha</option>
-                                                            <option>Combo</option>
-                                                          </select>
+                                                            <label>Seleccione tipo de ficha</label>
+                                                          
+                                                            <select class="form-control selc-reg" id="" name="billar_des" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($billar as $Billar)
+                                                                
+                                                                <option value={{ $Billar->descripcion }}> {{ $Billar->descripcion }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select>
+                                                                                  
 
                                                           <label>Precio</label>
-                                                          <select class="form-control" id="sel1">
-                                                            <option>2000</option>
-                                                            <option>5000</option>
-                                                          </select>                                                          
+                                                            <select class="form-control selc-reg" id="" name="billar_precio" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($billar as $Billar_)
+                                                                
+                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select>                                                       
                                                       </div><br/>
+
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_billar" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                                      
                                                                   
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
-                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Actualizar</button>
+                                                      <button style="margin-left: 25px" type="button" class="btn btn-default">Actualizar</button>
                                                     </form> 
                                                 
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                                 </div>
+                                                {{Form::close()}}
                                               </div>
                                               
                                             </div>
@@ -220,16 +239,21 @@
                                                 
                                                 </div>
                                                 <div class="modal-body">
-
-                                                    <form class="form-inline" action="/action_page.php">
-                                                      <div class="form-group">
+                                                    {{Form::open(array('url' => 'store/pozo'))}}
+                                                    
+                                                      <div class="form-group form-inline">
                                                         <label>Ingreso del Pozo</label>
-                                                        <input type="text" class="form-control" id="" style="margin-left: 40px">
+                                                        <input type="text" class="form-control" name="pozo" id="" style="margin-left: 40px">
                                                       </div><br/>
-                                                      <div class="form-group">
+                                                      <div class="form-group form-inline">
                                                         <label>Ingreso de Propina:</label>
-                                                        <input type="text" class="form-control" id="" style="margin-left: 20px">
+                                                        <input type="text" class="form-control" name="propina" id="" style="margin-left: 20px">
                                                       </div>
+
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_pozo" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>
                                                       
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     </form> 
@@ -238,6 +262,7 @@
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                                 </div>
+                                                {{Form::close()}}
                                               </div>
                                               
                                             </div>
@@ -248,7 +273,7 @@
                                           <div class="modal fade" id="compras" role="dialog">
                                             <div class="modal-dialog">
                                             
-                                              <!-- Modal content-->
+                                              
                                               <div class="modal-content">
                                                 <div class="modal-header">
 
@@ -258,24 +283,31 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                                    <form class="form-inline" action="/action_page.php">
-                                                      <div class="form-group">
+                                             {{Form::open(array('url' => 'store/compra'))}}                  
+                                                    
+                                                      <div class="form-group form-inline">
                                                         <label>Monto de compras</label>
-                                                        <input type="text" class="form-control" id="">
+                                                        <input type="text" class="form-control" name="compra" id="">
                                                       </div><br/>
                                                                   
+
+                                                      <div class="form-group">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_compra" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                            
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
-                                                    </form> 
+                                                    
                                                                                                     
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                                 </div>
+                                                {{Form::close()}}
                                               </div>
                                               
                                             </div>
                                           </div>
-                                         <!--endmodalPozo--> 
+                                         <!--endmodalCompra--> 
 
                                        <ul class="service_tabe_menu nav nav-tabs" role="tablist">
                                             <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" class="active" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-cutlery"></i> <br />Cantina</a>
@@ -338,8 +370,8 @@
         <script src="{{asset('assets/js/jquery.masonry.min.js')}}"></script>
         <script src="{{asset('assets/js/jquery.fancybox.pack.js')}}"></script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="http://maps.google.com/maps/api/js"></script>
+        
+        
         <script src="{{asset('assets/js/gmaps.min.js')}}"></script>
 
 
@@ -358,6 +390,9 @@
 
         <script src="{{asset('assets/js/plugins.js')}}"></script>
         <script src="{{asset('assets/js/main.js')}}"></script>
+        <script src="{{asset('js/compra.js')}}"></script>
+        <script src="{{asset('js/pozo.js')}}"></script>
+        <script src="{{asset('js/ingreso_billar.js')}}"></script>
 
     </body>
 </html>

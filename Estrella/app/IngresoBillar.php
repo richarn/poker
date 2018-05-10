@@ -8,10 +8,10 @@ class IngresoBillar extends Model
 {
     protected $table= 'IngresoBillar';
     protected $primaryKey='IdIngresoBillar';
+    public $timestamps = false;
     protected $fillable = [
         'descripcion', 'precio', 
-        'cantidad_juego', 'cantidad_combo', 
-        'iduser', 'totalBillar'
+        'fecha', 'totalBillar'
     ];
 
     /**
