@@ -172,9 +172,11 @@
                                                             <select class="form-control selc-reg" id="" name="billar_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                <option>Registrar Comestible</option>
-                                                                <option>Actualizar Comestible</option>
-                                                                <option>Registrar Venta</option>
+                                                                <option data-toggle="modal" data-target="#registro_comestible">Registrar Comestible</option>
+
+                                                                <option data-toggle="modal" data-target="#actualizar_comestible">Actualizar Comestible</option>
+                                                                
+                                                                <option data-toggle="modal" data-target="#venta_comestible">Registrar Venta</option>
                                                                         
                                                             </select>                                                       
                                                       </div><br/>
@@ -435,7 +437,7 @@
                                                 <div class="modal-header">
 
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Actualización de Bebidas</h4>
+                                                  <h4 class="modal-title">Venta de Bebidas</h4>
                                                 
                                                 </div>
                                                 <div class="modal-body">
@@ -480,6 +482,11 @@
                                                             </select>
 
                                                       </div><br/>
+
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fechaventa_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                                    
                                                                                                                                                 
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
@@ -495,6 +502,174 @@
                                           </div>
                                          <!--endmodalVentaBebidas--> 
 
+                                        <!--modalRegistroComestibles-->
+                                          <div class="modal fade" id="registro_comestible" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Registro de Comestibles</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                             {{Form::open(array('url' => 'store/'))}}                  
+                                                    
+                                                      <div class="form-group form-inline">
+                                                        <label>Descripción</label>
+                                                        <input  type="text" class="form-control" name="descri_comida" id="">
+                                                      </div><br/>
+                                                                
+                                                      <div class="form-group form-inline">
+                                                        <label>Cantidad</label>
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="cantidad_comida" id="">
+                                                      </div><br/>                 
+                                                      <div class="form-group form-inline">
+                                                        <label>Precio</label>
+                                                        <input style="margin-left: 37px"type="text" class="form-control" name="precio_comida" id="">
+                                                      </div><br/>
+                                                                                                       
+
+                                                      <div class="form-group">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fechaR_comida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>
+                                                     
+                                                                                                                                                
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                    
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                                {{Form::close()}}
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalRegistroComestibles--> 
+
+                                        <!--modalActualizacionComestibles-->
+                                          <div class="modal fade" id="actualizar_comestible" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Actualización de Comestibles</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                             {{Form::open(array('url' => 'store/'))}}                  
+                                                    
+                                                      <div class="form-group form-inline">
+                                                        <label>Descripción</label>
+                                                        <input  type="text" class="form-control" name="Adescri_comida" id=""><button class="btn-danger">Eliminar</button>
+                                                      </div><br/>
+                                                                
+                                                      <div class="form-group form-inline">
+                                                        <label>Cantidad</label>
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="Acantidad_comida" id=""><button class="btn-danger">Eliminar</button>
+                                                      </div><br/>      
+
+                                                      <div class="form-group form-inline">
+                                                        <label>Precio</label>
+                                                        <input style="margin-left: 37px"type="text" class="form-control" name="Aprecio_comida" id=""><button class="btn-danger">Eliminar</button>
+                                                      </div><br/>
+                                                                                                                                                
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                    
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                                {{Form::close()}}
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalActualizacionComestibles--> 
+
+                                        <!--modalVentaComestible-->
+                                          <div class="modal fade" id="venta_comestible" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Venta de Comestibles</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                             {{Form::open(array('url' => 'store/'))}}                  
+                                                    
+                                                      <div class="form-group form-inline">
+                                                        
+                                                            <label>Seleccione Comestible</label>
+                                                          
+                                                            <select class="form-control selc-reg" id="" name="venta_comida" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($billar as $Billar)
+                                                                
+                                                                <option value={{ $Billar->descripcion }}> {{ $Billar->descripcion }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select><br><br><br>
+                                                                                  
+
+                                                          <label>Cantidad</label>
+                                                            <select style="margin-left: 63px" class="form-control selc-reg" id="" name="ventaC_cantidad" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($billar as $Billar_)
+                                                                
+                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select><br><br><br>
+
+                                                          <label>Precio</label>
+                                                            <select style="margin-left: 79px" class="form-control selc-reg" id="" name="ventaC_precio" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($billar as $Billar_)
+                                                                
+                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select>
+
+                                                      </div><br/>
+                                                                
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fechaventa_comida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                                                                                                                              
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                    
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                                {{Form::close()}}
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalVentaComestible--> 
 
                                        <ul class="service_tabe_menu nav nav-tabs" role="tablist">
                                             <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" class="active" data-toggle="modal" data-target="#myModal" ><i class="glyphicon glyphicon-cutlery"></i> <br />Cantina</a>
