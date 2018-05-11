@@ -76,11 +76,17 @@
                                             {{ csrf_field() }}
                                         </form>
                                                 </li>
-                                            </ul>    
+                                            </ul>  
+
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="#">REPORTE</a></li>
+                                            </ul>                                                
 
                                             <ul class="nav navbar-nav navbar-right">
                                                 <li><a href="#">INICIO</a></li>
-                                            </ul>                                                                                    
+                                            </ul>  
+
+
                                             @yield('contenido')
 
                                         </div>
@@ -349,7 +355,7 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'store/BebidasYOtros'))}}                  
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
@@ -371,8 +377,13 @@
                                                         <input class="busc-ip" type="date" name="fechaR_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>                                            
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
+                                                      <!--<button style="margin-left: 25px" type="button" id="nuevo_Rbebida" class="btn btn-default">Nuevo</button>
                                                     
-                                                                                                    
+                                                        <script type="text/javascript">
+                                                            
+                                                            <
+                                                        </script>-->
+
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -451,9 +462,9 @@
                                                             <select class="form-control selc-reg" id="" name="venta_bebida" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($billar as $Billar)
+                                                                @foreach ($bebidasYOts as $bebidas_otros)
                                                                 
-                                                                <option value={{ $Billar->descripcion }}> {{ $Billar->descripcion }} </option>
+                                                                <option value={{ $bebidas_otros->descripcion }}> {{ $bebidas_otros->descripcion }} </option>
                                                                @endforeach
                                                                         
                                                             </select><br><br><br>
@@ -462,11 +473,32 @@
                                                           <label>Cantidad</label>
                                                             <select style="margin-left: 63px" class="form-control selc-reg" id="" name="ventaB_cantidad" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
-
-                                                                @foreach ($billar as $Billar_)
                                                                 
-                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
-                                                               @endforeach
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                                <option value="13">13</option>
+                                                                <option value="14">14</option>
+                                                                <option value="15">15</option>
+                                                                <option value="16">16</option>
+                                                                <option value="17">17</option>
+                                                                <option value="18">18</option>
+                                                                <option value="19">19</option>
+                                                                <option value="20">20</option>
+                                                                <option value="21">21</option>
+                                                                <option value="22">22</option>
+                                                                <option value="23">23</option>
+                                                                <option value="24">24</option>                                                                
+                                                               
                                                                         
                                                             </select><br><br><br>
 
@@ -474,9 +506,9 @@
                                                             <select style="margin-left: 79px" class="form-control selc-reg" id="" name="ventaB_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($billar as $Billar_)
+                                                                @foreach ($bebidasYOts as $precio)
                                                                 
-                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
+                                                                <option value={{ $precio->precio }}> {{ $precio->precio }} </option>
                                                                @endforeach
                                                                         
                                                             </select>
@@ -516,7 +548,7 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'store/comestibles'))}}                  
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
@@ -621,9 +653,9 @@
                                                             <select class="form-control selc-reg" id="" name="venta_comida" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($billar as $Billar)
+                                                                @foreach ($comidas_ as $comidas_venta)
                                                                 
-                                                                <option value={{ $Billar->descripcion }}> {{ $Billar->descripcion }} </option>
+                                                                <option value={{ $comidas_venta->descripcion }}> {{ $comidas_venta->descripcion }} </option>
                                                                @endforeach
                                                                         
                                                             </select><br><br><br>
@@ -633,10 +665,30 @@
                                                             <select style="margin-left: 63px" class="form-control selc-reg" id="" name="ventaC_cantidad" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($billar as $Billar_)
-                                                                
-                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
-                                                               @endforeach
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                                <option value="13">13</option>
+                                                                <option value="14">14</option>
+                                                                <option value="15">15</option>
+                                                                <option value="16">16</option>
+                                                                <option value="17">17</option>
+                                                                <option value="18">18</option>
+                                                                <option value="19">19</option>
+                                                                <option value="20">20</option>
+                                                                <option value="21">21</option>
+                                                                <option value="22">22</option>
+                                                                <option value="23">23</option>
+                                                                <option value="24">24</option> 
                                                                         
                                                             </select><br><br><br>
 
@@ -644,9 +696,9 @@
                                                             <select style="margin-left: 79px" class="form-control selc-reg" id="" name="ventaC_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($billar as $Billar_)
+                                                                @foreach ($comidas_ as $comidas_precio)
                                                                 
-                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
+                                                                <option value={{ $comidas_precio->precio }}> {{ $comidas_precio->precio }} </option>
                                                                @endforeach
                                                                         
                                                             </select>
@@ -756,6 +808,8 @@
         <script src="{{asset('js/compra.js')}}"></script>
         <script src="{{asset('js/pozo.js')}}"></script>
         <script src="{{asset('js/ingreso_billar.js')}}"></script>
+        <script src="{{asset('js/reg_bebidas.js')}}"></script>
+        <script src="{{asset('js/reg_comestibles.js')}}"></script>
 
     </body>
 </html>

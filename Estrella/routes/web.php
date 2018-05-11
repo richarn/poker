@@ -26,6 +26,9 @@ Route::post('store/pozo', 'ContenidoController@store_pozo');
 
 Route::post('store/Ingresobillar', 'ContenidoController@store_Ingresobillar');
 
+Route::post('store/BebidasYOtros', 'ContenidoController@store_BebidasYOtros');
+
+Route::post('store/comestibles', 'ContenidoController@store_comestibles');
 
 Auth::routes();
 

@@ -8,9 +8,11 @@ class BebidasYOtros extends Model
 {
     protected $table= 'BebidasYOtros';
     protected $primaryKey='IdBebidasYOtros';
+    public $timestamps = false;
     protected $fillable = [
         'descripcion', 'precio',
-        'cantidad', 'fecha' 
+        'cantidad', 'fecha',
+        'IdIngresoBebidasYOtros' 
     ];
 
     /**

@@ -8,6 +8,8 @@ use App\CostoProducto;
 use App\Pozo;
 use App\Billar;
 use App\IngresoBillar;
+use App\BebidasYOtros;
+use App\Comida;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -23,10 +25,13 @@ class ContenidoController extends Controller
 
 		$billar = Billar::all();
 
-
+		$bebidasYOts = BebidasYOtros::all();
+		$comidas_ = Comida::all();
 
 		return view('inicio.index',[
-			"billar" => $billar
+			"billar" => $billar,
+			"bebidasYOts" => $bebidasYOts,
+			"comidas_" => $comidas_
 			]);
 	}
 	//compre de productos
@@ -92,5 +97,47 @@ class ContenidoController extends Controller
 
 		return response()->json(['success' => $Billar_ingreso,
 			'Billar_id' =>  $Billar_id]);
+	}
+	//registro de bebidas y otros
+	public function store_BebidasYOtros(Request $request){
+		$descri_bebida = $request->get('descri_bebida');
+		$cantidad_bebida = $request->get('cantidad_bebida');
+		$precio_bebida = $request->get('precio_bebida');
+		$fechaR_bebida = $request->get('fechaR_bebida');
+
+		$bebidas = new BebidasYOtros;
+
+		$bebidas -> descripcion = $descri_bebida;
+		$bebidas -> cantidad = $cantidad_bebida;
+		$bebidas -> precio = $precio_bebida;
+		$bebidas -> fecha = $fechaR_bebida;
+		$bebidas -> IdIngresoBebidasYOtros = 1;
+		$bebidas_id = $bebidas -> IdBebidasYOtros;
+		$bebidas_re = $bebidas -> save();
+
+		return response()->json(['success' => $bebidas_re,
+			'bebidas_id' => $bebidas_id]);
+	}
+
+//registro de comida
+
+	public function store_comestibles(Request $request){
+        $descri_comida = $request->get('descri_comida');
+        $cantidad_comida = $request->get('cantidad_comida');
+        $precio_comida = $request->get('precio_comida');
+        $fechaR_comida = $request->get('fechaR_comida');
+
+        $comidas = new Comida;
+
+        $comidas -> descripcion = $descri_comida;
+        $comidas -> cantidad = $cantidad_comida;
+        $comidas -> precio = $precio_comida;
+        $comidas -> fecha = $fechaR_comida;
+        $comidas -> IdIngresoComida = 1;
+        $comidas_id = $comidas -> IdComida;
+        $comidas_re = $comidas -> save();
+
+        return response()->json(['success' => $comidas_re,
+        'comidas_id' => $comidas_id]);		
 	}
 }

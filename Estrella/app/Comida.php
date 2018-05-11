@@ -8,9 +8,11 @@ class Comida extends Model
 {
     protected $table= 'Comida';
     protected $primaryKey='IdComida';
+    public $timestamps = false;
     protected $fillable = [
         'descripcion', 'cantidad',
-        'precio', 'fecha' 
+        'precio', 'fecha',
+        'IdIngresoComida' 
     ];
 
     /**
