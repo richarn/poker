@@ -77,6 +77,9 @@
                                         </form>
                                                 </li>
                                             </ul>  
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="almacen">ALMACEN</a></li>
+                                            </ul>    
 
                                             <ul class="nav navbar-nav navbar-right">
                                                 <li><a href="#">REPORTE</a></li>
@@ -453,7 +456,7 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'store/ventaBebida'))}}                  
                                                     
                                                       <div class="form-group form-inline">
                                                         
@@ -644,7 +647,7 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'store/ventaComida'))}}                  
                                                     
                                                       <div class="form-group form-inline">
                                                         
@@ -810,6 +813,8 @@
         <script src="{{asset('js/ingreso_billar.js')}}"></script>
         <script src="{{asset('js/reg_bebidas.js')}}"></script>
         <script src="{{asset('js/reg_comestibles.js')}}"></script>
+        <script src="{{asset('js/venta_bebidas.js')}}"></script>
+        <script src="{{asset('js/venta_comida.js')}}"></script>
 
     </body>
 </html>

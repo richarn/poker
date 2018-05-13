@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 
 Route::post('login', 'LogController@index');
 
+Route::get('almacen', 'AlmacenController@index');
+
 Route::post('verifyLogin', 'LogController@verifyLogin');
 
 Route::get('contenido', 'ContenidoController@index');
@@ -29,6 +31,10 @@ Route::post('store/Ingresobillar', 'ContenidoController@store_Ingresobillar');
 Route::post('store/BebidasYOtros', 'ContenidoController@store_BebidasYOtros');
 
 Route::post('store/comestibles', 'ContenidoController@store_comestibles');
+
+Route::post('store/ventaBebida', 'ContenidoController@store_ventaBebida');
+
+Route::post('store/ventaComida', 'ContenidoController@store_ventaComida');
 
 Auth::routes();
 

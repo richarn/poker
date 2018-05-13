@@ -10,6 +10,8 @@ use App\Billar;
 use App\IngresoBillar;
 use App\BebidasYOtros;
 use App\Comida;
+use App\IngresoBebidasYOtros;
+use App\IngresoComida;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -139,5 +141,52 @@ class ContenidoController extends Controller
 
         return response()->json(['success' => $comidas_re,
         'comidas_id' => $comidas_id]);		
+	}
+	//registro de venta bebida
+	public function store_ventaBebida(Request $request){
+		$venta_bebida = $request->get('venta_bebida');
+		$ventaB_cantidad = $request->get('ventaB_cantidad');
+		$ventaB_precio = $request->get('ventaB_precio');
+		$fechaventa_bebida = $request->get('fechaventa_bebida');
+		$precio_total_venta = $ventaB_cantidad * $ventaB_precio;
+		//return response()->json($precio_total_venta);
+		$VentaBebida = new IngresoBebidasYOtros;
+
+		$VentaBebida -> descripcion = $venta_bebida;
+		$VentaBebida -> cantidad = $ventaB_cantidad;
+		$VentaBebida -> precio = $ventaB_precio;
+		$VentaBebida -> fecha = $fechaventa_bebida;
+		$VentaBebida -> precio_total = $precio_total_venta;
+		$VentaBebida_id = $VentaBebida -> IdIngresoBebidasYOtros;
+		$VentaBebida_ingreso = $VentaBebida -> save();
+
+		return response()->json(['success' => $VentaBebida_ingreso,
+		'VentaBebida_id' => $VentaBebida_id]);
+
+
+	}
+
+//registro de venta comida
+	public function store_ventaComida(Request $request){
+		$venta_comida = $request->get('venta_comida');
+		$ventaC_cantidad = $request->get('ventaC_cantidad');
+		$ventaC_precio = $request->get('ventaC_precio');
+		$fechaventa_comida = $request->get('fechaventa_comida');
+		$precio_total_ventaC = $ventaC_cantidad * $ventaC_precio;
+		//return response()->json($precio_total_venta);
+		$VentaComida = new IngresoComida;
+
+		$VentaComida -> descripcion = $venta_comida;
+		$VentaComida -> cantidad = $ventaC_cantidad;
+		$VentaComida -> precio = $ventaC_precio;
+		$VentaComida -> fecha = $fechaventa_comida;
+		$VentaComida -> precio_total_comida = $precio_total_ventaC;
+		$VentaComida_id = $VentaComida -> IdIngresoBebidasYOtros;
+		$VentaComida_ingreso = $VentaComida -> save();
+
+		return response()->json(['success' => $VentaComida_ingreso,
+		'VentaComida_id' => $VentaComida_id]);
+
+
 	}
 }

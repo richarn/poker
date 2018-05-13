@@ -8,10 +8,11 @@ class IngresoBebidasYOtros extends Model
 {
     protected $table= 'IngresoBebidasYOtros';
     protected $primaryKey='IdIngresoBebidasYOtros';
+    public $timestamps = false;
     protected $fillable = [
-        'iduser', 'descripcion',
-        'cantidad', 'precio',
-        'precio_total'
+        'descripcion','cantidad',
+         'precio', 'precio_total',
+         'fecha'
     ];
 
     /**
