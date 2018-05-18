@@ -51,8 +51,26 @@
                                              {{Form::open(array('url' => 'store/'))}}                  
                                                     
                                                       <div class="form-group form-inline">
-                                                        <label>Descripción</label>
-                                                        <input  type="text" class="form-control" name="Adescri_comida" id="">
+                                                
+                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
+                                                          
+                                                          <thead class="col-tab">
+                                                            <td>Nombre</td>
+                                                            <td>Cantidad</td>
+                                                            <td>Precio</td>
+                                                          </thead>
+                                                          <tbody>
+                                                          @foreach ($bebidasYOtros as $result)
+                                                            <tr>
+      
+                                                              <td>{{ $result->descripcion }}</td>
+                                                              <td>{{ $result->cantidad }}</td>
+                                                              <td>{{ $result->precio }}</td>
+
+                                                            </tr> 
+                                                          @endforeach                                                           
+                                                          </tbody>
+                                                        </table>
                                                       </div><br/>
                                                                
                                                     
@@ -85,8 +103,25 @@
                                              {{Form::open(array('url' => 'store/'))}}                  
                                                     
                                                       <div class="form-group form-inline">
-                                                        <label>Descripción</label>
-                                                        <input  type="text" class="form-control" name="Adescri_comida" id="">
+                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
+                                                          
+                                                          <thead class="col-tab">
+                                                            <td>Nombre</td>
+                                                            <td>Cantidad</td>
+                                                            <td>Precio</td>
+                                                          </thead>
+                                                          <tbody>
+                                                          @foreach ($comidas as $result)
+                                                            <tr>
+      
+                                                              <td>{{ $result->descripcion }}</td>
+                                                              <td>{{ $result->cantidad }}</td>
+                                                              <td>{{ $result->precio }}</td>
+
+                                                            </tr> 
+                                                          @endforeach                                                           
+                                                          </tbody>
+                                                        </table>
                                                       </div><br/>
                                                                
                                                     
