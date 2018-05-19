@@ -149,6 +149,30 @@ class ContenidoController extends Controller
 		$ventaB_precio = $request->get('ventaB_precio');
 		$fechaventa_bebida = $request->get('fechaventa_bebida');
 		$precio_total_venta = $ventaB_cantidad * $ventaB_precio;
+
+        $bebi = BebidasYOtros::select('cantidad')
+        ->where('descripcion', 'LIKE', '%'.$venta_bebida.'%')
+        ->first();
+
+ 		$total_cantidadb = $bebi->cantidad - $ventaB_cantidad;
+      
+
+		// Conseguimos el objeto
+		$query_cantb=BebidasYOtros::select('*')
+		->where('descripcion', 'LIKE', '%'.$venta_bebida.'%')
+		->first();
+
+		// Si existe
+		if($query_cantb->descripcion == $venta_bebida){
+		   // Seteamos un nuevo titulo
+		   $query_cantb->cantidad = $total_cantidadb;
+
+		   // Guardamos en base de datos
+		   $query_cantb->save();
+		}
+
+
+
 		//return response()->json($precio_total_venta);
 		$VentaBebida = new IngresoBebidasYOtros;
 
@@ -173,6 +197,33 @@ class ContenidoController extends Controller
 		$ventaC_precio = $request->get('ventaC_precio');
 		$fechaventa_comida = $request->get('fechaventa_comida');
 		$precio_total_ventaC = $ventaC_cantidad * $ventaC_precio;
+
+        $comi = Comida::select('cantidad')
+        ->where('descripcion', 'LIKE', '%'.$venta_comida.'%')
+        ->first();
+
+ 		$total_cantidad = $comi->cantidad - $ventaC_cantidad;
+      
+
+		// Conseguimos el objeto
+		$query_cant=Comida::select('*')
+		->where('descripcion', 'LIKE', '%'.$venta_comida.'%')
+		->first();
+
+		// Si existe
+		if($query_cant->descripcion == $venta_comida){
+		   // Seteamos un nuevo titulo
+		   $query_cant->cantidad = $total_cantidad;
+
+		   // Guardamos en base de datos
+		   $query_cant->save();
+		}
+
+
+        //return response()->json(["Datos actualizados", $array]);        
+
+        //return response()->json($total_cantidad);	
+
 		//return response()->json($precio_total_venta);
 		$VentaComida = new IngresoComida;
 
