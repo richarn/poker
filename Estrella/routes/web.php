@@ -18,6 +18,8 @@ Route::post('login', 'LogController@index');
 
 Route::get('almacen', 'AlmacenController@index');
 
+Route::get('reporte', 'ReporteController@index');
+
 Route::post('verifyLogin', 'LogController@verifyLogin');
 
 Route::get('contenido', 'ContenidoController@index');

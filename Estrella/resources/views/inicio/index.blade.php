@@ -82,11 +82,11 @@
                                             </ul>    
 
                                             <ul class="nav navbar-nav navbar-right">
-                                                <li><a href="#">REPORTE</a></li>
+                                                <li><a href="reporte">REPORTE</a></li>
                                             </ul>                                                
 
                                             <ul class="nav navbar-nav navbar-right">
-                                                <li><a href="#">INICIO</a></li>
+                                                <li><a href="contenido">INICIO</a></li>
                                             </ul>  
 
 

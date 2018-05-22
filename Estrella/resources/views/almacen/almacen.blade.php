@@ -11,11 +11,11 @@
  		</li>
     </ul>  
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">ALMACEN</a></li>
+        <li><a href="almacen">ALMACEN</a></li>
     </ul>    
 
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">REPORTE</a></li>
+        <li><a href="reporte">REPORTE</a></li>
     </ul>                                                
 
     <ul class="nav navbar-nav navbar-right">
