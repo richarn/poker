@@ -6,6 +6,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="csrf-token" content="{{ csrf_token() }}">        
         <title>Estrellas del Poker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -126,18 +129,18 @@
             <a href="#"><i class="fa fa-chevron-up"></i></a>
         </div>
 
-        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="{{asset('assets/js/vendor/jquery-1.11.2.min.js')}}"></script>
+        <script src="{{asset('assets/js/vendor/bootstrap.min.js')}}"></script>
 
-        <script src="assets/js/jquery.magnific-popup.js"></script>
-        <script src="assets/js/jquery.mixitup.min.js"></script>
-        <script src="assets/js/jquery.easing.1.3.js"></script>
-        <script src="assets/js/jquery.masonry.min.js"></script>
-        <script src="assets/js/jquery.fancybox.pack.js"></script>
+        <script src="{{asset('assets/js/jquery.magnific-popup.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.mixitup.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.easing.1.3.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.masonry.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.fancybox.pack.js')}}"></script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="http://maps.google.com/maps/api/js"></script>
-        <script src="assets/js/gmaps.min.js"></script>
+        
+        
+        <script src="{{asset('assets/js/gmaps.min.js')}}"></script>
 
 
         <script>
@@ -153,8 +156,9 @@
                                             }
         </script>
 
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="{{asset('assets/js/plugins.js')}}"></script>
+        <script src="{{asset('assets/js/main.js')}}"></script>
+        @yield('js')
 
     </body>
 </html>

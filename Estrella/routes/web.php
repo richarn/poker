@@ -38,6 +38,10 @@ Route::post('store/ventaBebida', 'ContenidoController@store_ventaBebida');
 
 Route::post('store/ventaComida', 'ContenidoController@store_ventaComida');
 
+
+Route::post('reporte/reporte_bebida', 'ReporteController@reporte_bebida');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -47,31 +47,18 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'reporte/reporte_bebida'))}}                  
                                                     
-                                                      <div class="form-group form-inline">
+                                                      
                                                 
-                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
-                                                          
-                                                          <thead class="col-tab">
-                                                            <td>Nombre</td>
-                                                            <td>Cantidad</td>
-                                                            <td>Precio</td>
-                                                          </thead>
-                                                          <tbody>
-                                                          
-                                                            <tr>
-      
-                                                              <td></td>
-                                                              <td></td>
-                                                              <td></td>
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_reporteB" step="1" min="1900-01-01" max="2100-12-31" id="reporte_beb" required />
+                                                      </div><br>
 
-                                                            </tr> 
-                                                                                                                     
-                                                          </tbody>
-                                                        </table>
-                                                      </div><br/>
-                                                               
+                                                      <div id="beb_rep"></div>
+                                                      
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Ver</button>                                                               
                                                     
                                                                                                     
                                                 </div>
@@ -189,6 +176,110 @@
                                           </div>
                                          <!--endmodalReporteBillar-->                                                                                                                           
 
+                                        <!--modalReportePozo-->
+                                          <div class="modal fade" id="reporte_pozo" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Reporte del Pozo</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                             {{Form::open(array('url' => 'store/'))}}                  
+                                                    
+                                                      <div class="form-group form-inline">
+                                                
+                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
+                                                          
+                                                          <thead class="col-tab">
+                                                            <td>Nombre</td>
+                                                            <td>Cantidad</td>
+                                                            <td>Precio</td>
+                                                          </thead>
+                                                          <tbody>
+                                                          
+                                                            <tr>
+      
+                                                              <td></td>
+                                                              <td></td>
+                                                              <td></td>
+
+                                                            </tr> 
+                                                                                                                     
+                                                          </tbody>
+                                                        </table>
+                                                      </div><br/>
+                                                               
+                                                    
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                                {{Form::close()}}
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalReportePozo-->                                                                                                                                                                    
+
+                                        <!--modalReportetotal-->
+                                          <div class="modal fade" id="reporte_total" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Reporte Total Ingreso</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                             {{Form::open(array('url' => 'store/'))}}                  
+                                                    
+                                                      <div class="form-group form-inline">
+                                                
+                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
+                                                          
+                                                          <thead class="col-tab">
+                                                            <td>Nombre</td>
+                                                            <td>Cantidad</td>
+                                                            <td>Precio</td>
+                                                          </thead>
+                                                          <tbody>
+                                                          
+                                                            <tr>
+      
+                                                              <td></td>
+                                                              <td></td>
+                                                              <td></td>
+
+                                                            </tr> 
+                                                                                                                     
+                                                          </tbody>
+                                                        </table>
+                                                      </div><br/>
+                                                               
+                                                    
+                                                                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                                {{Form::close()}}
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalReportetotal-->                                                                                                                                                                                                             
+
                                         <ul class="service_tabe_menu nav nav-tabs" role="tablist">
                                             
                                             <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_bebida"><i class="fa fa-map-marker"></i> <br />Bebidas</a></li>
@@ -197,9 +288,9 @@
 
                                             <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_billar"><i class="fa fa-map-marker"></i> <br />Billar</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#almacen_comida"><i class="fa fa-map-marker"></i> <br />Pozo</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_pozo"><i class="fa fa-map-marker"></i> <br />Pozo</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#almacen_comida"><i class="fa fa-map-marker"></i> <br />Total Ingreso </a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_total"><i class="fa fa-map-marker"></i> <br />Total Ingreso </a></li>
  
                                         </ul>
                                     </div>
@@ -209,4 +300,8 @@
                     </div>
                 </div>
             </section>  
+@stop
+
+@section('js')
+	<script src="{{asset('js/reporte_beb.js')}}"></script>
 @stop
