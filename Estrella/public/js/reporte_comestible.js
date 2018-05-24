@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    $("#reporte_beb").change(function(){
-        var fecha = $('#reporte_beb').val();
+    $("#reporte_comi").change(function(){
+        var fecha = $('#reporte_comi').val();
 
         $.ajaxSetup({
             headers: {
@@ -9,16 +9,16 @@ $(document).ready(function() {
         });
         
         $.ajax({
-            url: "/reporte/reporte_bebida",
+            url: "/reporte/reporte_comida",
             method: "POST",
             dataType: "json",
             data: {fecha_rep: fecha},
             success: function(data) {
                 console.log(data);
-                    $("#beb_rep").empty();
+                    $("#comi_rep").empty();
                 
                     var rep_fecha = `<label>${data}</label>`;
-                    $("#beb_rep").append(rep_fecha);
+                    $("#comi_rep").append(rep_fecha);
             
                 
             },

@@ -86,31 +86,18 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'reporte/reporte_comida'))}}                  
                                                     
-                                                      <div class="form-group form-inline">
+                                                      
                                                 
-                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
-                                                          
-                                                          <thead class="col-tab">
-                                                            <td>Nombre</td>
-                                                            <td>Cantidad</td>
-                                                            <td>Precio</td>
-                                                          </thead>
-                                                          <tbody>
-                                                          
-                                                            <tr>
-      
-                                                              <td></td>
-                                                              <td></td>
-                                                              <td></td>
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_reporteB" step="1" min="1900-01-01" max="2100-12-31" id="reporte_comi" required />
+                                                      </div><br>
 
-                                                            </tr> 
-                                                                                                                     
-                                                          </tbody>
-                                                        </table>
-                                                      </div><br/>
-                                                               
+                                                      <div id="comi_rep"></div>
+                                                      
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Ver</button>                                                               
                                                     
                                                                                                     
                                                 </div>
@@ -122,7 +109,7 @@
                                               
                                             </div>
                                           </div>
-                                         <!--endmodalReporteComida-->                                                                                  
+                                         <!--endmodalReporteComida-->                                                                         
 
                                         <!--modalReporteBillar-->
                                           <div class="modal fade" id="reporte_billar" role="dialog">
@@ -138,31 +125,18 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'reporte/reporte_billar'))}}                  
                                                     
-                                                      <div class="form-group form-inline">
+                                                      
                                                 
-                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
-                                                          
-                                                          <thead class="col-tab">
-                                                            <td>Nombre</td>
-                                                            <td>Cantidad</td>
-                                                            <td>Precio</td>
-                                                          </thead>
-                                                          <tbody>
-                                                          
-                                                            <tr>
-      
-                                                              <td></td>
-                                                              <td></td>
-                                                              <td></td>
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_reporteB" step="1" min="1900-01-01" max="2100-12-31" id="reporte_bill" required />
+                                                      </div><br>
 
-                                                            </tr> 
-                                                                                                                     
-                                                          </tbody>
-                                                        </table>
-                                                      </div><br/>
-                                                               
+                                                      <div id="billar_rep"></div>
+                                                      
+                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Ver</button>                                                               
                                                     
                                                                                                     
                                                 </div>
@@ -174,7 +148,7 @@
                                               
                                             </div>
                                           </div>
-                                         <!--endmodalReporteBillar-->                                                                                                                           
+                                         <!--endmodalReportetotalBillar-->                                                                         
 
                                         <!--modalReportePozo-->
                                           <div class="modal fade" id="reporte_pozo" role="dialog">
@@ -304,4 +278,6 @@
 
 @section('js')
 	<script src="{{asset('js/reporte_beb.js')}}"></script>
+  <script src="{{asset('js/reporte_comestible.js')}}"></script>
+  <script src="{{asset('js/reporte_billar.js')}}"></script>  
 @stop

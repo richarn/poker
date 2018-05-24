@@ -41,6 +41,9 @@ Route::post('store/ventaComida', 'ContenidoController@store_ventaComida');
 
 Route::post('reporte/reporte_bebida', 'ReporteController@reporte_bebida');
 
+Route::post('reporte/reporte_comida', 'ReporteController@reporte_comida');
+
+Route::post('reporte/reporte_billar', 'ReporteController@reporte_billar');
 
 Auth::routes();
 
