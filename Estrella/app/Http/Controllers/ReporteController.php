@@ -56,15 +56,44 @@ class ReporteController extends Controller
 
 
     public function reporte_total(Request $request){
-      $fecha = $request->get('fecha_rep');
+        $fecha = $request->get('fecha_rep');
 
-      $rep_bebida = TotalIngreso::join(
-        'IngresoBebidasYOtros', 'IngresoBebidasYOtros.IdIngresoBebidasYOtros', '=',
-        'TotalIngreso.IdIngresoBebidasYOtros')
-        ->select('IngresoBebidasYOtros.fecha', 'IngresoBebidasYOtros.precio_total')
-        ->where('IngresoBebidasYOtros.fecha', 'LIKE', '%'.$fecha.'%')
-        ->sum('IngresoBebidasYOtros.precio_total');        
-        return response()->json($rep_bebida);
+        $rep_bebida = TotalIngreso::join(
+            'IngresoBebidasYOtros', 'IngresoBebidasYOtros.IdIngresoBebidasYOtros', '=',
+            'TotalIngreso.IdIngresoBebidasYOtros')
+            ->select('IngresoBebidasYOtros.fecha', 'IngresoBebidasYOtros.precio_total')
+            ->where('IngresoBebidasYOtros.fecha', 'LIKE', '%'.$fecha.'%')
+            ->sum('IngresoBebidasYOtros.precio_total');        
+            //return response()->json($rep_bebida);
+
+        $rep_comida = TotalIngreso::join(
+            'IngresoComida', 'IngresoComida.IdIngresoComida', '=',
+            'TotalIngreso.IdIngresoComida')
+            ->select('IngresoComida.fecha', 'IngresoComida.precio_total_comida')
+            ->where('IngresoComida.fecha', 'LIKE', '%'.$fecha.'%')
+            ->sum('IngresoComida.precio_total_comida');        
+            //return response()->json($rep_comida); 
+
+        $rep_billar = TotalIngreso::join(
+            'IngresoBillar', 'IngresoBillar.IdIngresoBillar', '=',
+            'TotalIngreso.IdIngresoBillar')
+            ->select('IngresoBillar.fecha', 'IngresoBillar.totalBillar')
+            ->where('IngresoBillar.fecha', 'LIKE', '%'.$fecha.'%')
+            ->sum('IngresoBillar.totalBillar');        
+            //return response()->json($rep_billar);
+
+        $rep_pozo = TotalIngreso::join(
+            'Pozo', 'Pozo.IdPozo', '=','TotalIngreso.IdIngresoBillar')
+            ->select('Pozo.fecha', 'Pozo.total_pozo')
+            ->where('Pozo.fecha', 'LIKE', '%'.$fecha.'%')
+            ->sum('Pozo.total_pozo');        
+            //return response()->json($rep_pozo);
+
+        $total_dia = TotalIngreso::all();            
+
+        $suma_total = $rep_bebida + $rep_comida + $rep_billar + $rep_pozo; 
+        return response()->json($suma_total);
+
     }   
 
 }

@@ -18,7 +18,7 @@ $(document).ready(function() {
                     $("#beb_rep").empty();
                 
                     var rep_fecha = `<label>${data}</label>`;
-                    $("#beb_rep").append(rep_fecha);
+                    $("#beb_rep").append('Ingreso total en la fecha: '+rep_fecha);
             
                 
             },

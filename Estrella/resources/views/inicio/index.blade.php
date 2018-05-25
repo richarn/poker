@@ -412,11 +412,19 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'update/update_bebida'))}}                  
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
-                                                        <input  type="text" class="form-control" name="Adescri_bebida" id=""><button class="btn-danger">Eliminar</button>
+                                                            <select class="form-control selc-reg" id="" name="act_bebida" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($bebidasYOts as $bebidas_otros)
+                                                                
+                                                                <option value={{ $bebidas_otros->descripcion }}> {{ $bebidas_otros->descripcion }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select><br><br><br>
                                                       </div><br/>
                                                                 
                                                       <div class="form-group form-inline">
@@ -427,6 +435,10 @@
                                                         <label>Precio</label>
                                                         <input style="margin-left: 37px"type="text" class="form-control" name="Aprecio_bebida" id=""><button class="btn-danger">Eliminar</button>
                                                       </div><br/>
+                                                      <div class="form-group">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fechaA_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                                      
                                                                                                                                                 
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     

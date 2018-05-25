@@ -235,12 +235,6 @@ class ContenidoController extends Controller
 		   $query_cant->save();
 		}
 
-
-        //return response()->json(["Datos actualizados", $array]);        
-
-        //return response()->json($total_cantidad);	
-
-		//return response()->json($precio_total_venta);
 		$VentaComida = new IngresoComida;
 
 		$VentaComida -> descripcion = $venta_comida;
@@ -264,9 +258,29 @@ class ContenidoController extends Controller
 
 		return response()->json(['success' => $VentaComida_ingreso,
 		'VentaComida_id' => $VentaComida_id]);
-
-
 	}
 
 
+	public function update_bebida(Request $request){
+
+		$descrBe = $request->get('act_bebida');
+		$Acantidad_bebida = $request->get('Acantidad_bebida');
+		$Aprecio_bebida = $request->get('Aprecio_bebida');
+		$fechaA_bebida = $request->get('fechaA_bebida');
+
+		$query_bebida=BebidasYOtros::select('*')
+		->where('descripcion', 'LIKE', '%'.$descrBe.'%')
+		->first();
+
+		if($query_bebida->descripcion == $descrBe){
+
+			$query_bebida->cantidad = $Acantidad_bebida;
+			$query_bebida->precio = $Aprecio_bebida;
+			$query_bebida->fecha = $fechaA_bebida;
+			$query_bebida->save();
+
+		}
+
+
+	}
 }

@@ -18,7 +18,7 @@ $(document).ready(function() {
                     $("#pozo_rep").empty();
                 
                     var rep_fecha = `<label>${data}</label>`;
-                    $("#pozo_rep").append(rep_fecha);
+                    $("#pozo_rep").append('Ingreso total en la fecha: '+rep_fecha);
             
                 
             },
