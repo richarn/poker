@@ -12,6 +12,7 @@ use App\BebidasYOtros;
 use App\Comida;
 use App\IngresoBebidasYOtros;
 use App\IngresoComida;
+use App\TotalIngreso;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -72,10 +73,15 @@ class ContenidoController extends Controller
 		$Pozo -> monto = $pozo;
 		$Pozo -> propina = $propina;
 		$Pozo -> fecha = $fecha_pozo;
-		$Pozo_id = $Pozo -> IdPozo;
 		$Pozo -> total_pozo = $pozo_total;
 		$pozo_ingreso = $Pozo -> save();
+		$Pozo_id = $Pozo -> IdPozo;
 	
+		$query_total= new TotalIngreso();
+		$query_total->fecha = $fecha_pozo;
+		$query_total->IdPozo = $Pozo_id;
+		$query_total->save();
+
 		return response()->json(['success' => $pozo_ingreso,
 			'pozo_id' => $Pozo_id]);
 	}
@@ -94,9 +100,14 @@ class ContenidoController extends Controller
 		$Billar ->  precio = $billar_precio;
 		$Billar -> fecha = $fecha_billar;
 		$Billar -> totalBillar = $billar_precio;
-		$Billar_id = $Billar -> IdIngresoBillar;
 		$Billar_ingreso = $Billar -> save();
+		$Billar_id = $Billar -> IdIngresoBillar;
 
+		$query_total= new TotalIngreso();
+		$query_total->fecha = $fecha_billar;
+		$query_total->IdIngresoBillar = $Billar_id;
+		$query_total->save();
+		
 		return response()->json(['success' => $Billar_ingreso,
 			'Billar_id' =>  $Billar_id]);
 	}
@@ -172,7 +183,6 @@ class ContenidoController extends Controller
 		}
 
 
-
 		//return response()->json($precio_total_venta);
 		$VentaBebida = new IngresoBebidasYOtros;
 
@@ -181,13 +191,19 @@ class ContenidoController extends Controller
 		$VentaBebida -> precio = $ventaB_precio;
 		$VentaBebida -> fecha = $fechaventa_bebida;
 		$VentaBebida -> precio_total = $precio_total_venta;
-		$VentaBebida_id = $VentaBebida -> IdIngresoBebidasYOtros;
 		$VentaBebida_ingreso = $VentaBebida -> save();
+		$VentaBebida_id = $VentaBebida -> IdIngresoBebidasYOtros;
+
+		$query_total= new TotalIngreso();
+
+
+		$query_total->fecha = $fechaventa_bebida;
+		$query_total->IdIngresoBebidasYOtros = $VentaBebida_id;
+
+		$query_total->save();
 
 		return response()->json(['success' => $VentaBebida_ingreso,
 		'VentaBebida_id' => $VentaBebida_id]);
-
-
 	}
 
 //registro de venta comida
@@ -232,12 +248,25 @@ class ContenidoController extends Controller
 		$VentaComida -> precio = $ventaC_precio;
 		$VentaComida -> fecha = $fechaventa_comida;
 		$VentaComida -> precio_total_comida = $precio_total_ventaC;
-		$VentaComida_id = $VentaComida -> IdIngresoBebidasYOtros;
 		$VentaComida_ingreso = $VentaComida -> save();
+		$VentaComida_id = $VentaComida -> IdIngresoComida;
+
+
+		$query_total= new TotalIngreso();
+
+
+		$query_total->fecha = $fechaventa_comida;
+		$query_total->IdIngresoComida = $VentaComida_id;
+
+		$query_total->save();
+
+
 
 		return response()->json(['success' => $VentaComida_ingreso,
 		'VentaComida_id' => $VentaComida_id]);
 
 
 	}
+
+
 }

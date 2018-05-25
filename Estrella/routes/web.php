@@ -45,6 +45,10 @@ Route::post('reporte/reporte_comida', 'ReporteController@reporte_comida');
 
 Route::post('reporte/reporte_billar', 'ReporteController@reporte_billar');
 
+Route::post('reporte/reporte_Pozo', 'ReporteController@reporte_Pozo');
+
+Route::post('reporte/reporte_total', 'ReporteController@reporte_total');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

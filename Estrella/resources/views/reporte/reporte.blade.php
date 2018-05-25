@@ -57,8 +57,7 @@
                                                       </div><br>
 
                                                       <div id="beb_rep"></div>
-                                                      
-                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Ver</button>                                                               
+                                                             
                                                     
                                                                                                     
                                                 </div>
@@ -96,8 +95,7 @@
                                                       </div><br>
 
                                                       <div id="comi_rep"></div>
-                                                      
-                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Ver</button>                                                               
+                                                             
                                                     
                                                                                                     
                                                 </div>
@@ -135,8 +133,7 @@
                                                       </div><br>
 
                                                       <div id="billar_rep"></div>
-                                                      
-                                                      <button style="margin-left: 25px" type="submit" class="btn btn-default">Ver</button>                                                               
+                                                             
                                                     
                                                                                                     
                                                 </div>
@@ -159,36 +156,22 @@
                                                 <div class="modal-header">
 
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Reporte del Pozo</h4>
+                                                  <h4 class="modal-title">Reporte de Pozo</h4>
                                                 
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'reporte/reporte_Pozo'))}}                  
                                                     
-                                                      <div class="form-group form-inline">
+                                                      
                                                 
-                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
-                                                          
-                                                          <thead class="col-tab">
-                                                            <td>Nombre</td>
-                                                            <td>Cantidad</td>
-                                                            <td>Precio</td>
-                                                          </thead>
-                                                          <tbody>
-                                                          
-                                                            <tr>
-      
-                                                              <td></td>
-                                                              <td></td>
-                                                              <td></td>
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_reporteB" step="1" min="1900-01-01" max="2100-12-31" id="reporte_poz" required />
+                                                      </div><br>
 
-                                                            </tr> 
-                                                                                                                     
-                                                          </tbody>
-                                                        </table>
-                                                      </div><br/>
-                                                               
+                                                      <div id="pozo_rep"></div>
+                                                             
                                                     
                                                                                                     
                                                 </div>
@@ -200,9 +183,9 @@
                                               
                                             </div>
                                           </div>
-                                         <!--endmodalReportePozo-->                                                                                                                                                                    
+                                         <!--endmodalReportetotalPozo-->                                                                         
 
-                                        <!--modalReportetotal-->
+                                        <!--modalReporteTotal-->
                                           <div class="modal fade" id="reporte_total" role="dialog">
                                             <div class="modal-dialog">
                                             
@@ -211,38 +194,24 @@
                                                 <div class="modal-header">
 
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Reporte Total Ingreso</h4>
+                                                  <h4 class="modal-title">Reporte Total de ingresos</h4>
                                                 
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'reporte/reporte_total'))}}                  
                                                     
-                                                      <div class="form-group form-inline">
+                                                      
                                                 
-                                                        <table class='table table-bordered table-striped table-hover table-responsive tbl-fecio' style="margin-top: 100px">
-                                                          
-                                                          <thead class="col-tab">
-                                                            <td>Nombre</td>
-                                                            <td>Cantidad</td>
-                                                            <td>Precio</td>
-                                                          </thead>
-                                                          <tbody>
-                                                          
-                                                            <tr>
-      
-                                                              <td></td>
-                                                              <td></td>
-                                                              <td></td>
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_reporteB" step="1" min="1900-01-01" max="2100-12-31" id="reporte_tot" required />
+                                                      </div><br>
 
-                                                            </tr> 
-                                                                                                                     
-                                                          </tbody>
-                                                        </table>
-                                                      </div><br/>
-                                                               
-                                                    
-                                                                                                    
+                                                      <div id="total_rep"></div>
+                                                      
+                                                                                                             
+                                                                                                                                             
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -252,7 +221,9 @@
                                               
                                             </div>
                                           </div>
-                                         <!--endmodalReportetotal-->                                                                                                                                                                                                             
+                                         <!--endmodalReportetotalTotal-->                                                                         
+
+
 
                                         <ul class="service_tabe_menu nav nav-tabs" role="tablist">
                                             
@@ -279,5 +250,7 @@
 @section('js')
 	<script src="{{asset('js/reporte_beb.js')}}"></script>
   <script src="{{asset('js/reporte_comestible.js')}}"></script>
-  <script src="{{asset('js/reporte_billar.js')}}"></script>  
+  <script src="{{asset('js/reporte_billar.js')}}"></script>
+  <script src="{{asset('js/reporte_pozo.js')}}"></script>
+  <script src="{{asset('js/reporte_total.js')}}"></script>  
 @stop

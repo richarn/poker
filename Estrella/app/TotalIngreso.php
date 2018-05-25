@@ -8,6 +8,7 @@ class TotalIngreso extends Model
 {
     protected $table= 'TotalIngreso';
     protected $primaryKey='IdTotalIngreso';
+    public $timestamps = false;
     protected $fillable = [
         'fecha', 'IdIngresoBebidasYOtros', 
         'IdIngresoComida', 'IdIngresoBillar', 
