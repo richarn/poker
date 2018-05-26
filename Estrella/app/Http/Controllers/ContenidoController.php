@@ -280,7 +280,27 @@ class ContenidoController extends Controller
 			$query_bebida->save();
 
 		}
-
-
 	}
+
+	public function update_comida(Request $request){
+
+		$act_comida = $request->get('act_comida');
+		$Acantidad_comida = $request->get('Acantidad_comida');
+		$Aprecio_comida = $request->get('Aprecio_comida');
+		$fechaA_comida = $request->get('fechaA_comida');
+
+		$query_comida=Comida::select('*')
+		->where('descripcion', 'LIKE', '%'.$act_comida.'%')
+		->first();
+
+		if($query_comida->descripcion == $act_comida){
+
+			$query_comida->cantidad = $Acantidad_comida;
+			$query_comida->precio = $Aprecio_comida;
+			$query_comida->fecha = $fechaA_comida;
+			$query_comida->save();
+
+		}
+	}
+
 }

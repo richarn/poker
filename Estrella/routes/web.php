@@ -50,6 +50,8 @@ Route::post('reporte/reporte_total', 'ReporteController@reporte_total');
 
 Route::post('update/update_bebida', 'ContenidoController@update_bebida');
 
+Route::post('update/update_comida', 'ContenidoController@update_comida');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

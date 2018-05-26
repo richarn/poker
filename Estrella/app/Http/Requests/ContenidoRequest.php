@@ -49,7 +49,12 @@ class ContenidoRequest extends FormRequest
             'act_bebida' => 'required',
             'Acantidad_bebida' => 'required',
             'Aprecio_bebida' => 'required',
-            'fechaA_bebida' => 'required'
+            'fechaA_bebida' => 'required',
+
+            'act_comida' => 'required',
+            'Acantidad_comida' => 'required',
+            'Aprecio_comida' => 'required',
+            'fechaA_comida' => 'required'
         ];
     }
 }

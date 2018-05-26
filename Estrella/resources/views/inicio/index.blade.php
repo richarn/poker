@@ -53,10 +53,10 @@
                                                 <span class="icon-bar"></span>
                                                 <span class="icon-bar"></span>
                                             </button>
-                                            <a class="navbar-brand" href="#home">
-                                                <p>EP</p>
-                                                <!--<img src="{{asset('assets/images/logo.png')}}"/-->
-                                            </a>
+                                           <!-- <a class="navbar-brand" href="#home">
+                                                
+                                                <img src="{{asset('assets/images/logo.png')}}"/
+                                            </a>-->
                                         </div>
 
                                         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -429,11 +429,13 @@
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Cantidad</label>
-                                                        <input style="margin-left: 21px" type="text" class="form-control" name="Acantidad_bebida" id=""><button class="btn-danger">Eliminar</button>
+                                                        <input style="margin-left: 21px" type="text" required class="form-control" name="Acantidad_bebida" id="">
+                                                        <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>                 
                                                       <div class="form-group form-inline">
                                                         <label>Precio</label>
-                                                        <input style="margin-left: 37px"type="text" class="form-control" name="Aprecio_bebida" id=""><button class="btn-danger">Eliminar</button>
+                                                        <input style="margin-left: 37px"type="text" required class="form-control" name="Aprecio_bebida" id="">
+                                                        <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>
                                                       <div class="form-group">
                                                         <label>Fecha </label>
@@ -614,22 +616,37 @@
                                                 </div>
                                                 <div class="modal-body">
 
-                                             {{Form::open(array('url' => 'store/'))}}                  
+                                             {{Form::open(array('url' => 'update/update_comida'))}}                  
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
-                                                        <input  type="text" class="form-control" name="Adescri_comida" id=""><button class="btn-danger">Eliminar</button>
+                                                            <select class="form-control selc-reg" id="" name="act_comida" required>
+                                                                <option disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($comidas_ as $comida)
+                                                                
+                                                                <option value={{ $comida->descripcion }}> {{ $comida->descripcion }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select><br><br><br> 
                                                       </div><br/>
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Cantidad</label>
-                                                        <input style="margin-left: 21px" type="text" class="form-control" name="Acantidad_comida" id=""><button class="btn-danger">Eliminar</button>
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="Acantidad_comida" required id="">
+                                                        <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>      
 
                                                       <div class="form-group form-inline">
                                                         <label>Precio</label>
-                                                        <input style="margin-left: 37px"type="text" class="form-control" name="Aprecio_comida" id=""><button class="btn-danger">Eliminar</button>
+                                                        <input style="margin-left: 37px"type="text" required class="form-control" name="Aprecio_comida" id="">
+                                                        <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>
+
+                                                      <div class="form-group">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fechaA_comida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                                       
                                                                                                                                                 
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
