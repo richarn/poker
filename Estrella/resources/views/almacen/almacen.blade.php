@@ -140,9 +140,9 @@
 
                                         <ul class="service_tabe_menu nav nav-tabs" role="tablist">
                                             
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#almacen_bebida"><i class="fa fa-map-marker"></i> <br />Bebidas</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#almacen_bebida"><i class=" glyphicon glyphicon-glass"></i> <br />Bebidas</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#almacen_comida"><i class="fa fa-map-marker"></i> <br />Comestibles</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#almacen_comida"><i class="glyphicon glyphicon-cutlery"></i> <br />Comestibles</a></li>
  
                                         </ul>
                                     </div>

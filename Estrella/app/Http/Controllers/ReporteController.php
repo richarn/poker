@@ -8,6 +8,7 @@ use App\IngresoComida;
 use App\IngresoBillar;
 use App\Pozo;
 use App\TotalIngreso;
+use App\CostoProducto;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -96,4 +97,11 @@ class ReporteController extends Controller
 
     }   
 
+    public function reporte_costo(Request $request){
+      $fecha = $request->get('fecha_rep');
+      //return response()->json($fecha);
+        $fecha_reporte = CostoProducto::where('fecha', 'LIKE', '%'.$fecha.'%')
+          ->sum('monto');
+        return response()->json($fecha_reporte);
+    }
 }

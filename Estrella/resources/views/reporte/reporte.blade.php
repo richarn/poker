@@ -223,20 +223,59 @@
                                           </div>
                                          <!--endmodalReportetotalTotal-->                                                                         
 
+                                        <!--modalReporteTotal-->
+                                          <div class="modal fade" id="reporte_costo" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Reporte de Gastos</h4>
+                                                
+                                                </div>
+                                                <div class="modal-body">
+
+                                             {{Form::open(array('url' => 'reporte/reporte_costo'))}}                  
+                                                    
+                                                      
+                                                
+                                                      <div class="form-group form-inline">
+                                                        <label>Fecha </label>
+                                                        <input class="busc-ip" type="date" name="fecha_reporteCos" step="1" min="1900-01-01" max="2100-12-31" id="reporte_cos" required />
+                                                      </div><br>
+
+                                                      <div id="cost_rep"></div>
+                                                      
+                                                                                                             
+                                                                                                                                             
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                                {{Form::close()}}
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                         <!--endmodalReportetotalTotal-->                                                                         
 
 
                                         <ul class="service_tabe_menu nav nav-tabs" role="tablist">
                                             
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_bebida"><i class="fa fa-map-marker"></i> <br />Bebidas</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_bebida"><i class="glyphicon glyphicon-glass"></i> <br />Bebidas</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_comida"><i class="fa fa-map-marker"></i> <br />Comestibles</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_comida"><i class="glyphicon glyphicon-cutlery"></i> <br />Comestibles</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_billar"><i class="fa fa-map-marker"></i> <br />Billar</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_billar"><i class="glyphicon glyphicon-record"></i> <br />Billar</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_pozo"><i class="fa fa-map-marker"></i> <br />Pozo</a></li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_pozo"><i class="glyphicon glyphicon-briefcase"></i> <br />Pozo</a></li>
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_total"><i class="fa fa-map-marker"></i> <br />Total Ingreso </a></li>
- 
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_total"><i class="glyphicon glyphicon-usd"></i> <br />Total Ingreso </a></li>
+                                    
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#reporte_costo"><i class="glyphicon glyphicon-shopping-cart"></i> <br />Costo de compras </a></li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -252,5 +291,6 @@
   <script src="{{asset('js/reporte_comestible.js')}}"></script>
   <script src="{{asset('js/reporte_billar.js')}}"></script>
   <script src="{{asset('js/reporte_pozo.js')}}"></script>
-  <script src="{{asset('js/reporte_total.js')}}"></script>  
+  <script src="{{asset('js/reporte_total.js')}}"></script>
+  <script src="{{asset('js/reporte_costo.js')}}"></script>  
 @stop

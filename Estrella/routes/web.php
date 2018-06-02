@@ -48,6 +48,8 @@ Route::post('reporte/reporte_Pozo', 'ReporteController@reporte_Pozo');
 
 Route::post('reporte/reporte_total', 'ReporteController@reporte_total');
 
+Route::post('reporte/reporte_costo', 'ReporteController@reporte_costo');
+
 Route::post('update/update_bebida', 'ContenidoController@update_bebida');
 
 Route::post('update/update_comida', 'ContenidoController@update_comida');

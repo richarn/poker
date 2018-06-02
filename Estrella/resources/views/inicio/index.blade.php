@@ -218,7 +218,7 @@
                                                         
                                                             <label>Seleccione tipo de ficha</label>
                                                           
-                                                            <select class="form-control selc-reg" id="" name="billar_des" required>
+                                                            <select class="form-control selc-reg" id="bill" name="billar_des" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($billar as $Billar)
@@ -230,7 +230,7 @@
                                                                                   
 
                                                           <label>Precio</label>
-                                                            <select class="form-control selc-reg" id="" name="billar_precio" required>
+                                                            <select class="form-control selc-reg" id="precio_bi" name="billar_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($billar as $Billar_)
@@ -243,11 +243,12 @@
 
                                                       <div class="form-group form-inline">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fecha_billar" step="1" min="1900-01-01" max="2100-12-31" required />
-                                                      </div><br>                                                      
-                                                                  
+                                                        <input class="busc-ip" type="date" name="fecha_billar" id="fecha_bi" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                                       
+                                                      <button style="" id="nuevo_bi" type="submit" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
-                                                      <button style="margin-left: 25px" type="button" class="btn btn-default">Actualizar</button>
+                                                      <!--<button style="margin-left: 25px" type="button" class="btn btn-default">Actualizar</button>-->
                                                     </form> 
                                                 
                                                 </div>
@@ -278,18 +279,20 @@
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Ingreso del Pozo</label>
-                                                        <input type="text" class="form-control" name="pozo" id="" style="margin-left: 40px">
+                                                        <input type="text" class="form-control" name="pozo" id="pozo_" style="margin-left: 40px">
                                                       </div><br/>
                                                       <div class="form-group form-inline">
                                                         <label>Ingreso de Propina:</label>
-                                                        <input type="text" class="form-control" name="propina" id="" style="margin-left: 20px">
+                                                        <input type="text" class="form-control" name="propina" id="propina" style="margin-left: 20px">
                                                       </div>
 
                                                       <div class="form-group form-inline">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fecha_pozo" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                        <input class="busc-ip" type="date" id="fecha_pz" name="fecha_pozo" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>
                                                       
+                                                      <button style="" id="nuevo_pozo" type="submit" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     </form> 
                                                                                                     
@@ -322,14 +325,17 @@
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Monto de compras</label>
-                                                        <input type="text" class="form-control" name="compra" id="">
+                                                        <input type="text" class="form-control" name="compra" id="comp">
                                                       </div><br/>
                                                                   
 
                                                       <div class="form-group">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fecha_compra" step="1" min="1900-01-01" max="2100-12-31" required />
-                                                      </div><br>                                            
+                                                        <input class="busc-ip" type="date" name="fecha_compra" id="fecha_com" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>
+
+                                                      <button style="" type="submit" id="nuevo_comp" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
                                                                                                     
@@ -362,30 +368,28 @@
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
-                                                        <input  type="text" class="form-control" name="descri_bebida" id="">
+                                                        <input  type="text" class="form-control" name="descri_bebida" id="des_rb">
                                                       </div><br/>
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Cantidad</label>
-                                                        <input style="margin-left: 21px" type="text" class="form-control" name="cantidad_bebida" id="">
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="cantidad_bebida" id="cant_rb">
                                                       </div><br/>                 
                                                       <div class="form-group form-inline">
                                                         <label>Precio</label>
-                                                        <input style="margin-left: 37px"type="text" class="form-control" name="precio_bebida" id="">
+                                                        <input style="margin-left: 37px"type="text" class="form-control" name="precio_bebida" id="precio_rb">
                                                       </div><br/>
                                                                                                        
 
                                                       <div class="form-group">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fechaR_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                        <input class="busc-ip" type="date" name="fechaR_bebida" step="1" id="fecha_rb" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>                                            
+                                                      <button style="margin-left: 25px" type="button" id="nuevo_Rbebida" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
-                                                      <!--<button style="margin-left: 25px" type="button" id="nuevo_Rbebida" class="btn btn-default">Nuevo</button>
-                                                    
-                                                        <script type="text/javascript">
-                                                            
-                                                            <
-                                                        </script>-->
+                                                      
+                    
 
                                                 </div>
                                                 <div class="modal-footer">
@@ -416,7 +420,7 @@
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
-                                                            <select class="form-control selc-reg" id="" name="act_bebida" required>
+                                                            <select class="form-control selc-reg" id="des_ab" name="act_bebida" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($bebidasYOts as $bebidas_otros)
@@ -429,19 +433,20 @@
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Cantidad</label>
-                                                        <input style="margin-left: 21px" type="text" required class="form-control" name="Acantidad_bebida" id="">
+                                                        <input style="margin-left: 21px" type="text" required class="form-control" name="Acantidad_bebida" id="cant_ab">
                                                         <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>                 
                                                       <div class="form-group form-inline">
                                                         <label>Precio</label>
-                                                        <input style="margin-left: 37px"type="text" required class="form-control" name="Aprecio_bebida" id="">
+                                                        <input style="margin-left: 37px"type="text" required class="form-control" name="Aprecio_bebida" id="precio_ab">
                                                         <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>
                                                       <div class="form-group">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fechaA_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                        <input class="busc-ip" type="date" id="fecha_ab" name="fechaA_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>                                                      
-                                                                                                                                                
+                                                      <button style="margin-left: 25px" id="nuevo_ab" type="submit" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
                                                                                                     
@@ -476,8 +481,8 @@
                                                         
                                                             <label>Seleccione Bebida</label>
                                                           
-                                                            <select class="form-control selc-reg" id="" name="venta_bebida" required>
-                                                                <option disabled selected value="seleccione">Seleccione...</option>
+                                                            <select class="form-control selc-reg" id="venta_bebi" name="venta_bebida" required>
+                                                                <option id="opt1" disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($bebidasYOts as $bebidas_otros)
                                                                 
@@ -488,7 +493,7 @@
                                                                                   
 
                                                           <label>Cantidad</label>
-                                                            <select style="margin-left: 63px" class="form-control selc-reg" id="" name="ventaB_cantidad" required>
+                                                            <select style="margin-left: 63px" class="form-control selc-reg" id="cantidad_vb" name="ventaB_cantidad" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
                                                                 
                                                                 <option value="1">1</option>
@@ -520,7 +525,7 @@
                                                             </select><br><br><br>
 
                                                           <label>Precio</label>
-                                                            <select style="margin-left: 79px" class="form-control selc-reg" id="" name="ventaB_precio" required>
+                                                            <select style="margin-left: 79px" class="form-control selc-reg" id="precio_vb" name="ventaB_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($bebidasYOts as $precio)
@@ -534,9 +539,11 @@
 
                                                       <div class="form-group form-inline">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fechaventa_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                        <input class="busc-ip" id="fecha_vb" type="date" name="fechaventa_bebida" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>                                                    
-                                                                                                                                                
+                                                      <button style="" type="button" id="nuevo1" class="btn btn-default">Nuevo</button>
+
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
                                                                                                     
@@ -569,25 +576,26 @@
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
-                                                        <input  type="text" class="form-control" name="descri_comida" id="">
+                                                        <input  type="text" class="form-control"  name="descri_comida" id="des_rc">
                                                       </div><br/>
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Cantidad</label>
-                                                        <input style="margin-left: 21px" type="text" class="form-control" name="cantidad_comida" id="">
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="cantidad_comida" id="can_rc">
                                                       </div><br/>                 
                                                       <div class="form-group form-inline">
                                                         <label>Precio</label>
-                                                        <input style="margin-left: 37px"type="text" class="form-control" name="precio_comida" id="">
+                                                        <input style="margin-left: 37px"type="text" class="form-control" name="precio_comida" id="precio_rc">
                                                       </div><br/>
                                                                                                        
 
                                                       <div class="form-group">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fechaR_comida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                        <input class="busc-ip" id="fecha_rc" type="date" name="fechaR_comida" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>
                                                      
-                                                                                                                                                
+                                                      <button style="" type="submit" id="nuevo_rc" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
                                                                                                     
@@ -620,7 +628,7 @@
                                                     
                                                       <div class="form-group form-inline">
                                                         <label>Descripción</label>
-                                                            <select class="form-control selc-reg" id="" name="act_comida" required>
+                                                            <select class="form-control selc-reg" id="des_ac" name="act_comida" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($comidas_ as $comida)
@@ -633,21 +641,22 @@
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Cantidad</label>
-                                                        <input style="margin-left: 21px" type="text" class="form-control" name="Acantidad_comida" required id="">
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="Acantidad_comida" required id="can_ac">
                                                         <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>      
 
                                                       <div class="form-group form-inline">
                                                         <label>Precio</label>
-                                                        <input style="margin-left: 37px"type="text" required class="form-control" name="Aprecio_comida" id="">
+                                                        <input style="margin-left: 37px"type="text" required class="form-control" name="Aprecio_comida" id="precio_ac">
                                                         <!--<button class="btn-danger">Eliminar</button>-->
                                                       </div><br/>
 
                                                       <div class="form-group">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fechaA_comida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                        <input class="busc-ip" type="date" id="fecha_ac" name="fechaA_comida" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>                                                       
-                                                                                                                                                
+                                                      <button style="" type="submit" id="nuevo_ac" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
                                                                                                     
@@ -682,7 +691,7 @@
                                                         
                                                             <label>Seleccione Comestible</label>
                                                           
-                                                            <select class="form-control selc-reg" id="" name="venta_comida" required>
+                                                            <select class="form-control selc-reg" id="venta_come" name="venta_comida" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($comidas_ as $comidas_venta)
@@ -694,7 +703,7 @@
                                                                                   
 
                                                           <label>Cantidad</label>
-                                                            <select style="margin-left: 63px" class="form-control selc-reg" id="" name="ventaC_cantidad" required>
+                                                            <select style="margin-left: 63px" class="form-control selc-reg" id="cantidad_vc" name="ventaC_cantidad" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 <option value="1">1</option>
@@ -725,7 +734,7 @@
                                                             </select><br><br><br>
 
                                                           <label>Precio</label>
-                                                            <select style="margin-left: 79px" class="form-control selc-reg" id="" name="ventaC_precio" required>
+                                                            <select style="margin-left: 79px" class="form-control selc-reg" id="precio_vc" name="ventaC_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($comidas_ as $comidas_precio)
@@ -741,8 +750,11 @@
                                                                 
                                                       <div class="form-group form-inline">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fechaventa_comida" step="1" min="1900-01-01" max="2100-12-31" required />
-                                                      </div><br>                                                                                                                                              
+                                                        <input class="busc-ip" id="fecha_vc" type="date" name="fechaventa_comida" step="1" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                          
+
+                                                      <button style="" id="nuevo2" type="button" class="btn btn-default">Nuevo</button>
+
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
                                                     
                                                                                                     
@@ -846,6 +858,14 @@
         <script src="{{asset('js/reg_comestibles.js')}}"></script>
         <script src="{{asset('js/venta_bebidas.js')}}"></script>
         <script src="{{asset('js/venta_comida.js')}}"></script>
-
+        <script src="{{asset('js/nuevo_vb.js')}}"></script>
+        <script src="{{asset('js/nuevo_vc.js')}}"></script>
+        <script src="{{asset('js/nuevo_rb.js')}}"></script>
+        <script src="{{asset('js/nuevo_ab.js')}}"></script>
+        <script src="{{asset('js/nuevo_rc.js')}}"></script>
+        <script src="{{asset('js/nuevo_ac.js')}}"></script>
+        <script src="{{asset('js/nuevo_billar.js')}}"></script>
+        <script src="{{asset('js/nuevo_pozo.js')}}"></script>
+        <script src="{{asset('js/nuevo_compra.js')}}"></script>
     </body>
 </html>
