@@ -10,7 +10,8 @@ class CostoProducto extends Model
     protected $primaryKey='IdCostoProductos';
     public $timestamps = false;
     protected $fillable = [
-        'monto', 'fecha' 
+        'precio', 'fecha',
+        'descripcion', 'cantidad' 
      
     ];
 

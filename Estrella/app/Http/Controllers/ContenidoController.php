@@ -37,20 +37,41 @@ class ContenidoController extends Controller
 			"comidas_" => $comidas_
 			]);
 	}
-	//compre de productos
+	//compra de productos
     public function store_compra (Request $request){
 	   
        //$compra = CostoProducto::all();
 
-       $compra_pro = $request->get('compra');
-       $fecha = $request->get('fecha_compra');
+       $compra_pro = $request->get('compra_descri');
+       $fecha = $request->get('compra_fecha');
+       $compra_cant = $request->get('compra_canti');
+       $compra_precio = $request->get('compra_precio');
+
+       //return response()->json(['compra_pro', 'fecha', 'compra_cant', 'compra_precio']);
+       	$query_bebida=BebidasYOtros::select('*')
+		->where('descripcion', 'LIKE', '%'.$compra_pro.'%')
+		->first();
        
-       //return response()->json([$obser, $usuario]);
+
+		if($query_bebida->descripcion == $compra_pro){
+
+			$bd_cant = $query_bebida->cantidad;
+
+			$query_bebida->cantidad = $bd_cant + $compra_cant;
+			$query_bebida->precio = $compra_precio;
+			$query_bebida->fecha = $fecha;
+			$query_bebida->save();
+
+		}       
+
+
        $compras = new CostoProducto;
 
-       $compras -> monto = $compra_pro;
+       $compras -> precio = $compra_precio;
        $compras -> fecha = $fecha;
-       $compras_id = $compras-> IdCostoProductos;
+       $compras -> descripcion = $compra_pro;
+       $compras -> cantidad = $compra_cant;
+       $compras_id = $compras -> IdCostoProductos;
        $compra_monto = $compras -> save();
        
 	   return response()->json(['success' => $compra_monto, 
@@ -172,7 +193,7 @@ class ContenidoController extends Controller
 		$query_cantb=BebidasYOtros::select('*')
 		->where('descripcion', 'LIKE', '%'.$venta_bebida.'%')
 		->first();
-
+		return response()->json($venta_bebida);
 		// Si existe
 		if($query_cantb->descripcion == $venta_bebida){
 		   // Seteamos un nuevo titulo

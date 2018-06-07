@@ -25,8 +25,11 @@ class ContenidoRequest extends FormRequest
     public function rules()
     {
         return [
-            'compra' => 'required',
-            'fecha_compra' => 'required' ,
+            'compra_descri' => 'required',
+            'compra_canti' => 'required' ,
+            'compra_fecha' => 'required' ,
+            'compra_precio' => 'required' ,
+
 
             'pozo' => 'required',
             'propina' => 'required',

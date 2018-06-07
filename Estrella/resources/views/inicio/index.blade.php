@@ -307,8 +307,8 @@
                                           </div>
                                          <!--endmodalPozo--> 
                                          
-                                        <!--modalCompras-->
-                                          <div class="modal fade" id="compras" role="dialog">
+                                        <!--modalRegistroCompras-->
+                                          <div class="modal fade" id="registro_compras" role="dialog">
                                             <div class="modal-dialog">
                                             
                                               
@@ -316,7 +316,7 @@
                                                 <div class="modal-header">
 
                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Registro de compras</h4>
+                                                  <h4 class="modal-title">Registro de Compras</h4>
                                                 
                                                 </div>
                                                 <div class="modal-body">
@@ -324,21 +324,37 @@
                                              {{Form::open(array('url' => 'store/compra'))}}                  
                                                     
                                                       <div class="form-group form-inline">
-                                                        <label>Monto de compras</label>
-                                                        <input type="text" class="form-control" name="compra" id="comp">
+                                                        <label>Descripción</label>
+                                                            <select class="form-control selc-reg" id="venta_bebi" name="compra_descri" required>
+                                                                <option id="opt1" disabled selected value="seleccione">Seleccione...</option>
+
+                                                                @foreach ($bebidasYOts as $bebidas_otros)
+                                                                
+                                                                <option value={{ $bebidas_otros->descripcion }}> {{ $bebidas_otros->descripcion }} </option>
+                                                               @endforeach
+                                                                        
+                                                            </select><br>
+                                                       </div>         
+                                                      <div class="form-group form-inline">
+                                                        <label>Cantidad</label>
+                                                        <input style="margin-left: 21px" type="text" class="form-control" name="compra_canti" id="cant_rb">
+                                                      </div><br/>                 
+                                                      <div class="form-group form-inline">
+                                                        <label>Precio</label>
+                                                        <input style="margin-left: 37px"type="text" class="form-control" name="compra_precio" id="precio_rb">
                                                       </div><br/>
-                                                                  
+                                                                                                       
 
                                                       <div class="form-group">
                                                         <label>Fecha </label>
-                                                        <input class="busc-ip" type="date" name="fecha_compra" id="fecha_com" step="1" min="1900-01-01" max="2100-12-31" required />
-                                                      </div><br>
-
-                                                      <button style="" type="submit" id="nuevo_comp" class="btn btn-default">Nuevo</button>
+                                                        <input class="busc-ip" type="date" name="compra_fecha" step="1" id="fecha_rb" min="1900-01-01" max="2100-12-31" required />
+                                                      </div><br>                                            
+                                                      <button style="margin-left: 25px" type="button" id="nuevo_Rbebida" class="btn btn-default">Nuevo</button>
 
                                                       <button style="margin-left: 25px" type="submit" class="btn btn-default">Guardar</button>
-                                                    
-                                                                                                    
+                                                      
+                    
+
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -348,7 +364,7 @@
                                               
                                             </div>
                                           </div>
-                                         <!--endmodalCompra--> 
+                                         <!--endmodalRegistroCompras--> 
 
                                         <!--modalRegistroBebidas-->
                                           <div class="modal fade" id="registro_bebidas" role="dialog">
@@ -791,7 +807,7 @@
 
 
 
-                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#compras"><i class="glyphicon glyphicon-shopping-cart"></i> <br />Compra de productos</a><li>
+                                            <a href="#" aria-controls="webdesign" role="tab"><li role="presentation" data-toggle="modal" data-target="#registro_compras"><i class="glyphicon glyphicon-shopping-cart"></i> <br />Compra de productos</a><li>
                                         </ul>
 
                                     </div>

@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //victima
     
-    $('#compras').find('form').on('submit', function() { 
+    $('#registro_compras').find('form').on('submit', function() { 
         var form = $(this);
         var data = form.serialize();
         var url_form = form.attr('action');
