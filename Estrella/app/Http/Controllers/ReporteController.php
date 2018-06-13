@@ -59,6 +59,9 @@ class ReporteController extends Controller
     public function reporte_total(Request $request){
         $fecha = $request->get('fecha_rep');
 
+        $costo = CostoProducto::where('fecha', 'LIKE', '%'.$fecha.'%')
+          ->sum('precio');        
+
         $rep_bebida = TotalIngreso::join(
             'IngresoBebidasYOtros', 'IngresoBebidasYOtros.IdIngresoBebidasYOtros', '=',
             'TotalIngreso.IdIngresoBebidasYOtros')
@@ -92,7 +95,7 @@ class ReporteController extends Controller
 
         $total_dia = TotalIngreso::all();            
 
-        $suma_total = $rep_bebida + $rep_comida + $rep_billar + $rep_pozo; 
+        $suma_total = ($rep_bebida + $rep_comida + $rep_billar + $rep_pozo)-$costo; 
         return response()->json($suma_total);
 
     }   
@@ -101,7 +104,7 @@ class ReporteController extends Controller
       $fecha = $request->get('fecha_rep');
       //return response()->json($fecha);
         $fecha_reporte = CostoProducto::where('fecha', 'LIKE', '%'.$fecha.'%')
-          ->sum('monto');
+          ->sum('precio');
         return response()->json($fecha_reporte);
     }
 }

@@ -11,7 +11,7 @@ $(document).ready(function(){
             console.log(r_data);
         });
         
-        alert("BEBIDA REGISTRADA"); 
+        alert("COMIDA REGISTRADA"); 
         return false; 
         
     });

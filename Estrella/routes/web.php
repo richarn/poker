@@ -54,6 +54,12 @@ Route::post('update/update_bebida', 'ContenidoController@update_bebida');
 
 Route::post('update/update_comida', 'ContenidoController@update_comida');
 
+Route::post('bebida/getPrecioB', 'ContenidoController@getPrecioB');
+
+Route::post('bebida/getPrecioC', 'ContenidoController@getPrecioC');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('tipo/{type}', 'SweetController@notification');

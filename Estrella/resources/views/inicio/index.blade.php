@@ -9,6 +9,7 @@
         <title>Estrellas del Poker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 
@@ -497,7 +498,7 @@
                                                         
                                                             <label>Seleccione Bebida</label>
                                                           
-                                                            <select class="form-control selc-reg" id="venta_bebi" name="venta_bebida" required>
+                                                            <select class="form-control selc-reg" id="venta_bebid" name="venta_bebida" required>
                                                                 <option id="opt1" disabled selected value="seleccione">Seleccione...</option>
 
                                                                 @foreach ($bebidasYOts as $bebidas_otros)
@@ -541,13 +542,13 @@
                                                             </select><br><br><br>
 
                                                           <label>Precio</label>
-                                                            <select style="margin-left: 79px" class="form-control selc-reg" id="precio_vb" name="ventaB_precio" required>
+                                                            <select style="margin-left: 79px" id="precio_b" class="form-control selc-reg"  name="ventaB_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($bebidasYOts as $precio)
+                                                                {{--@foreach ($bebidasYOts as $precio)
                                                                 
                                                                 <option value={{ $precio->precio }}> {{ $precio->precio }} </option>
-                                                               @endforeach
+                                                               @endforeach--}}
                                                                         
                                                             </select>
 
@@ -753,10 +754,10 @@
                                                             <select style="margin-left: 79px" class="form-control selc-reg" id="precio_vc" name="ventaC_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
 
-                                                                @foreach ($comidas_ as $comidas_precio)
+                                                                {{--@foreach ($comidas_ as $comidas_precio)
                                                                 
                                                                 <option value={{ $comidas_precio->precio }}> {{ $comidas_precio->precio }} </option>
-                                                               @endforeach
+                                                               @endforeach--}}
                                                                         
                                                             </select>
                                                             
@@ -768,6 +769,8 @@
                                                         <label>Fecha </label>
                                                         <input class="busc-ip" id="fecha_vc" type="date" name="fechaventa_comida" step="1" min="1900-01-01" max="2100-12-31" required />
                                                       </div><br>                                          
+
+                                                      {{ session('flash_message') }}
 
                                                       <button style="" id="nuevo2" type="button" class="btn btn-default">Nuevo</button>
 
@@ -883,5 +886,7 @@
         <script src="{{asset('js/nuevo_billar.js')}}"></script>
         <script src="{{asset('js/nuevo_pozo.js')}}"></script>
         <script src="{{asset('js/nuevo_compra.js')}}"></script>
+        <script src="{{asset('js/precio_beb.js')}}"></script>
+        <script src="{{asset('js/precio_com.js')}}"></script>
     </body>
 </html>

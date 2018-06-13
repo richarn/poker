@@ -193,7 +193,8 @@ class ContenidoController extends Controller
 		$query_cantb=BebidasYOtros::select('*')
 		->where('descripcion', 'LIKE', '%'.$venta_bebida.'%')
 		->first();
-		return response()->json($venta_bebida);
+
+		
 		// Si existe
 		if($query_cantb->descripcion == $venta_bebida){
 		   // Seteamos un nuevo titulo
@@ -204,17 +205,40 @@ class ContenidoController extends Controller
 		}
 
 
+
+
+		if($venta_bebida == "Baviera"){
+			$venta_beb = new IngresoBebidasYOtros;
+			$venta_beb->descripcion = $venta_bebida;
+			$venta_beb->cantidad = $ventaB_cantidad;
+			$venta_beb->precio = $ventaB_precio;
+			$venta_beb->fecha = $fechaventa_bebida;
+			$venta_beb->precio_total = $ventaB_precio;
+			$VentaBebida_ingreso = $venta_beb -> save();
+			$VentaBebida_id = $venta_beb->IdIngresoBebidasYOtros;
+		}else{
+			$venta_beb = new IngresoBebidasYOtros;
+			$venta_beb->descripcion = $venta_bebida;
+			$venta_beb->cantidad = $ventaB_cantidad;
+			$venta_beb->precio = $ventaB_precio;
+			$venta_beb->fecha = $fechaventa_bebida;
+			$venta_beb->precio_total = $precio_total_venta;
+			$VentaBebida_ingreso = $venta_beb -> save();
+			$VentaBebida_id = $venta_beb->IdIngresoBebidasYOtros;			
+		}
+
+
 		//return response()->json($precio_total_venta);
-		$VentaBebida = new IngresoBebidasYOtros;
 
-		$VentaBebida -> descripcion = $venta_bebida;
-		$VentaBebida -> cantidad = $ventaB_cantidad;
-		$VentaBebida -> precio = $ventaB_precio;
-		$VentaBebida -> fecha = $fechaventa_bebida;
-		$VentaBebida -> precio_total = $precio_total_venta;
-		$VentaBebida_ingreso = $VentaBebida -> save();
-		$VentaBebida_id = $VentaBebida -> IdIngresoBebidasYOtros;
-
+		// $VentaBebida = new IngresoBebidasYOtros;
+		// $VentaBebida -> descripcion = $venta_bebida;
+		// $VentaBebida -> cantidad = $ventaB_cantidad;
+		// $VentaBebida -> precio = $ventaB_precio;
+		// $VentaBebida -> fecha = $fechaventa_bebida;
+		// $VentaBebida -> precio_total = $precio_total_venta;
+		// $VentaBebida_ingreso = $VentaBebida -> save();
+		// $VentaBebida_id = $VentaBebida -> IdIngresoBebidasYOtros;
+		
 		$query_total= new TotalIngreso();
 
 
@@ -239,6 +263,8 @@ class ContenidoController extends Controller
         ->where('descripcion', 'LIKE', '%'.$venta_comida.'%')
         ->first();
 
+
+        
  		$total_cantidad = $comi->cantidad - $ventaC_cantidad;
       
 
@@ -323,5 +349,27 @@ class ContenidoController extends Controller
 
 		}
 	}
+
+   //get precio bebida  
+	public function getPrecioB(Request $request){
+    	$descri = $request->get("id_bebida");
+      	$bebidas = BebidasYOtros::select('*')
+        ->where('descripcion', 'LIKE', '%'.$descri.'%')
+        ->get();
+
+        
+    	return response()->json($bebidas);
+   	}  
+
+   //get precio comida  
+	public function getPrecioC(Request $request){
+    	$descri = $request->get("precio_comida");
+      	$comidas = Comida::select('*')
+        ->where('descripcion', 'LIKE', '%'.$descri.'%')
+        ->get();
+
+        
+    	return response()->json($comidas);
+   	}
 
 }
