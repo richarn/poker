@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //victima
     
-    $('#billar').find('form').on('submit', function() { 
+    $('#actualizar_bebidas').find('form').on('submit', function() { 
         var form = $(this);
         var data = form.serialize();
         var url_form = form.attr('action');
@@ -11,10 +11,11 @@ $(document).ready(function(){
             console.log(r_data);
         });
         
-        alert("BILLAR REGISTRADO"); 
+        alert("BEBIDA ACTUALIZADA"); 
         return false; 
+        
     });
-    
-    
+   
+        
 });
  

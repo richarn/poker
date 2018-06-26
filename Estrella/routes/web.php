@@ -50,6 +50,14 @@ Route::post('reporte/reporte_total', 'ReporteController@reporte_total');
 
 Route::post('reporte/reporte_costo', 'ReporteController@reporte_costo');
 
+Route::post('reporte/reporte_semana', 'ReporteController@reporte_semana');
+
+Route::post('reporte/lista_costo', 'ReporteController@lista_costo');
+
+Route::post('reporte/sum_sema', 'ReporteController@sum_sema');
+
+Route::post('reporte/cierre_dia', 'ReporteController@cierre_dia');
+
 Route::post('update/update_bebida', 'ContenidoController@update_bebida');
 
 Route::post('update/update_comida', 'ContenidoController@update_comida');
@@ -57,6 +65,8 @@ Route::post('update/update_comida', 'ContenidoController@update_comida');
 Route::post('bebida/getPrecioB', 'ContenidoController@getPrecioB');
 
 Route::post('bebida/getPrecioC', 'ContenidoController@getPrecioC');
+
+Route::post('bebida/getPrecioFi', 'ContenidoController@getPrecioFi');
 
 Auth::routes();
 

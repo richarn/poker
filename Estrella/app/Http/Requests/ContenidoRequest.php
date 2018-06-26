@@ -57,7 +57,14 @@ class ContenidoRequest extends FormRequest
             'act_comida' => 'required',
             'Acantidad_comida' => 'required',
             'Aprecio_comida' => 'required',
-            'fechaA_comida' => 'required'
+            'fechaA_comida' => 'required',
+            'fecha_reporteSem' => 'required',
+            'cierre_descri' => 'required',
+            'totaldia' => 'required',
+            'fecha_cierre' => 'required',
+            'fecha_reporteSem' => 'required'
+
+
         ];
     }
 }

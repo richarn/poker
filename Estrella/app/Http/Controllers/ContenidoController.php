@@ -58,8 +58,6 @@ class ContenidoController extends Controller
 			$bd_cant = $query_bebida->cantidad;
 
 			$query_bebida->cantidad = $bd_cant + $compra_cant;
-			$query_bebida->precio = $compra_precio;
-			$query_bebida->fecha = $fecha;
 			$query_bebida->save();
 
 		}       
@@ -101,6 +99,7 @@ class ContenidoController extends Controller
 		$query_total= new TotalIngreso();
 		$query_total->fecha = $fecha_pozo;
 		$query_total->IdPozo = $Pozo_id;
+		$query_total->total_dia = $pozo_total;
 		$query_total->save();
 
 		return response()->json(['success' => $pozo_ingreso,
@@ -127,6 +126,7 @@ class ContenidoController extends Controller
 		$query_total= new TotalIngreso();
 		$query_total->fecha = $fecha_billar;
 		$query_total->IdIngresoBillar = $Billar_id;
+		$query_total->total_dia = $billar_precio;
 		$query_total->save();
 		
 		return response()->json(['success' => $Billar_ingreso,
@@ -211,7 +211,7 @@ class ContenidoController extends Controller
 			$venta_beb = new IngresoBebidasYOtros;
 			$venta_beb->descripcion = $venta_bebida;
 			$venta_beb->cantidad = $ventaB_cantidad;
-			$venta_beb->precio = $ventaB_precio;
+			$venta_beb->precio = $precio_total_venta = $ventaB_precio;
 			$venta_beb->fecha = $fechaventa_bebida;
 			$venta_beb->precio_total = $ventaB_precio;
 			$VentaBebida_ingreso = $venta_beb -> save();
@@ -244,7 +244,7 @@ class ContenidoController extends Controller
 
 		$query_total->fecha = $fechaventa_bebida;
 		$query_total->IdIngresoBebidasYOtros = $VentaBebida_id;
-
+		$query_total->total_dia = $precio_total_venta;
 		$query_total->save();
 
 		return response()->json(['success' => $VentaBebida_ingreso,
@@ -298,7 +298,7 @@ class ContenidoController extends Controller
 
 		$query_total->fecha = $fechaventa_comida;
 		$query_total->IdIngresoComida = $VentaComida_id;
-
+		$query_total->total_dia = $precio_total_ventaC;
 		$query_total->save();
 
 
@@ -371,5 +371,16 @@ class ContenidoController extends Controller
         
     	return response()->json($comidas);
    	}
+
+   //get precio ficha billar  
+	public function getPrecioFi(Request $request){
+    	$descri = $request->get("precio_billar");
+      	$billar_precio = Billar::select('*')
+        ->where('descripcion', 'LIKE', '%'.$descri.'%')
+        ->get();
+
+        
+    	return response()->json($billar_precio);
+   	}   	
 
 }

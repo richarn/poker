@@ -233,11 +233,7 @@
                                                           <label>Precio</label>
                                                             <select class="form-control selc-reg" id="precio_bi" name="billar_precio" required>
                                                                 <option disabled selected value="seleccione">Seleccione...</option>
-
-                                                                @foreach ($billar as $Billar_)
-                                                                
-                                                                <option value={{ $Billar_->precio }}> {{ $Billar_->precio }} </option>
-                                                               @endforeach
+                                                               
                                                                         
                                                             </select>                                                       
                                                       </div><br/>
@@ -888,5 +884,8 @@
         <script src="{{asset('js/nuevo_compra.js')}}"></script>
         <script src="{{asset('js/precio_beb.js')}}"></script>
         <script src="{{asset('js/precio_com.js')}}"></script>
+        <script src="{{asset('js/actua_bebida.js')}}"></script>
+        <script src="{{asset('js/actua_comida.js')}}"></script>
+         <script src="{{asset('js/precio_billar.js')}}"></script>
     </body>
 </html>
